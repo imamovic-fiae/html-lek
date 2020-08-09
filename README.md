@@ -1,2 +1,2 @@
 # EBAS-HTML / LEK
-## In Bearbeitung noch...
+## Eine einfache Website mit HTML und CSS für EBAS erstellt. Github ist optional.

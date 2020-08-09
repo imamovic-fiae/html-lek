@@ -1,6 +1,6 @@
 /* CSS reset um Seitenbreite anzupasen 
-vw (viewport width) ist benutzt um die Seite auf 70% zu bringen
-1vw=1%
+vw (viewport width) ist benutzt um die Seitebreite auf 70%  anzupassen 
+1vw=1% des sichtbaren
 */
 
 * {
@@ -9,12 +9,18 @@ vw (viewport width) ist benutzt um die Seite auf 70% zu bringen
 	float:none !important;
 }
 
-/* Default Schriftart setzen und height auf 1000px um footer in die fixierte position zu bringen, 0px bottom*/
+/* Default Schriftart setzen und height auf 1000px um footer in die fixierte position zu bringen, 0px bottom */
 
 html,body {
 	font-family: 'PT Sans', sans-serif;
+	
+
+}
+
+body {
+	/* Overflow auf Auto eingestellt und Seitenhöhe angegeben, um vertikale Bewegung zu ermöglichen, d. h. Sprung nach oben mit Pfeil zum funktionieren gebracht */
 	height:1000px;
-	overflow:hidden;
+	overflow:auto;
 }
 
 /* Navigation elemente auf rechte Seite bringen 
@@ -40,11 +46,11 @@ padding:10px;
 	filter: drop-shadow(16px 16px 10px black)
 }
 
-/* Klasse mit Firmennamen zentriert, könnte auch h1 gemachte werden */
+/* Klasse mit Firmennamen zentriert, könnte auch h1 gemacht werden */
 
 .company-name {
 font-family: 'Notable', sans-serif;
-font-size:4vh;
+font-size:2em;
 position:absolute;
 top:40px;
 right:35vw;
@@ -61,7 +67,7 @@ text-decoration:none;
 
 h2,h3 {
 	
-	margin:20px !important;
+	margin:10px !important;
 	text-align:center;
 }
 
@@ -75,8 +81,7 @@ header a:hover {
 color:purple;
 }
 
-
-/* Verschah */
+/* section mit article */
 section article {
 	width:70%;
 	margin-top:10px;
@@ -88,7 +93,13 @@ section aside {
 	width:30%;
 	float:right !important;
 	position:absolute;
-	right:115px;
+	right:115px;;
+}
+
+/* Sehr langer CSS-Kombinator um Bilder (img-Tag) mit Rahmen zu verschönern */
+
+section aside p a img {
+	border:2px dotted red;
 }
 
 footer {
@@ -96,7 +107,7 @@ footer {
 	text-align:center;
 	margin:10px auto;
 	position:fixed;
-	bottom:0px;
+	bottom:0;
 	background-color:#f1f1f1;
 	color:black;
 }
@@ -163,6 +174,18 @@ right:10px;
 
 .tea-promo p {
 	text-align:right;
+	font-size:14px;
+	font-weight:bolder;
+}
+
+.tea-promo a {
+	text-decoration:none;
+	color:darkred;
+}
+
+.tea-promo a:hover {
+	text-decoration:underline;
+	color:blue;
 }
 
 section article {
@@ -193,12 +216,63 @@ form button {
 	background-color:red;
 	color:white;
 }
+@media screen and (max-width:1320px) {
 
-ul {
+	.company-name {
+		color:red;
+		font-size:24px;
+		margin:0 10px;
+		padding:0 10px;
+	}
+
+	section aside {
+		top:200px;
+		right:2%;
+	}
+
+	footer {
+		max-height:100px;
+		font-size:10px;
+		bottom:0;
+		}
+}
+
+@media screen and (max-width:960px) {
+	
+	.company-name {
+		display:none;
+	}
+}
+
+.quellen li {
+	list-style-type: lower-roman;
+}
+
+p.table-info {
+	text-transform: capitalize;
 	padding:20px;
 }
 
-ul li {
-	font-weight:bold;
-	list-style:lower-roman;
+form.maus-zeiger:hover {
+	/* Form mit dem neuen Mauszeiger Wert */ 
+	cursor: crosshair;
+}
+
+/* Kind-Selektor */
+
+main>div {
+background-color:green;
+height:420px;
+}
+
+.zwei-artikel p{
+	float:left !important;
+	margin:10px;
+	padding:10px;
+	border:1px dotted pink;
+}
+
+.zwei-artikel img{
+	width:300px;
+	margin:10px;
 }
