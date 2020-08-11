@@ -261,18 +261,25 @@ form.maus-zeiger:hover {
 /* Kind-Selektor */
 
 main>div {
-background-color:green;
+/* Höhe angepasst*/
 height:420px;
 }
 
 .zwei-artikel p{
-	float:left !important;
+	float:right;
 	margin:10px;
 	padding:10px;
-	border:1px dotted pink;
+
 }
 
 .zwei-artikel img{
 	width:300px;
-	margin:10px;
+}
+
+/* Kind-Selektor sollte nur Verweise nur Seite mit Artikel ansprechen */
+div>p>a {
+	color:blue;
+}
+div>p>a:hover {
+	color:green;
 }
